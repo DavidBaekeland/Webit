@@ -6,12 +6,23 @@
     box-shadow: var(--boxShadowCard);
 }
 
+.card-small {
+    width: 240px;
+    height: 350px;
+    margin: 20px;
+}
+
 .card img {
     width: 100%;
     height: 155px;
     object-fit: cover;
     overflow: hidden;
     border-radius: 5px;
+}
+
+
+.card-small img {
+    height: 130px;
 }
 
 .infoCard {
@@ -34,7 +45,7 @@
     font-size: 16px;
 }
 
-.slotDateCard p svg {
+svg {
     width: 18px;
     margin-right: 10px;
 }

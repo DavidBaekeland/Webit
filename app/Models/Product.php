@@ -40,6 +40,18 @@ class Product extends Model
         return "$endDate om $endTime";
     }
 
+    public function getHigestOfferAttribute()
+    {
+        $higestOffer = $this->offers()->orderByDesc("offer")->first();
+        if ($higestOffer)
+        {
+            return $higestOffer->offer;
+        } else
+        {
+            return false;
+        }
+    }
+
     /** Relationships */
     public function auction(): BelongsTo
     {

@@ -23,3 +23,19 @@ nav img {
     margin: 40px 60px;
 }
 
+.productsCards {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 60px;
+    flex-flow: row wrap;
+}
+
+input {
+    background: #AFAFAF12 0% 0% no-repeat padding-box;
+    box-shadow: var(--boxShadowCard);
+    border-radius: 5px;
+    width: 45%;
+    height: 40px;
+    padding-left: 20px;
+    border: none;
+}
