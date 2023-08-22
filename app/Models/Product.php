@@ -31,6 +31,17 @@ class Product extends Model
     {
         return "$this->start_valuation - $this->end_valuation";
     }
+
+    public function getEndAttribute()
+    {
+        $endDate = Carbon::createFromFormat('Y-m-d H:i:s', $this->end_date)->format('d-m-Y');
+        $endTime = Carbon::createFromFormat('Y-m-d H:i:s', $this->end_date)->format('H:i');
+
+        return "$endDate om $endTime";
+    }
+
+    /** Relationships */
+    public function auction(): BelongsTo
     {
         return $this->belongsTo(Auction::class);
     }
@@ -43,5 +54,12 @@ class Product extends Model
     public function images(): HasMany
     {
         return $this->hasMany(Image::class);
+    }
+
+    public function imageFirst()
+    {
+        return $this->hasMany(Image::class)
+            ->pluck("image")
+            ->first();
     }
 }

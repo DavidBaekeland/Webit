@@ -1,4 +1,4 @@
-<div class="card">
+<a class="card" href="{{ route("actions", $auction->slug) }}">
     <img src="{{ asset('storage/auctions/'.$auction->slug.'/'.$auction->image) }}" alt="Boot" srcset="">
 
     <div class="infoCard">
@@ -30,4 +30,4 @@
 
         </div>
     </div>
-</div>
+</a>

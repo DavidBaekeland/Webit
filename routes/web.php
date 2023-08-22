@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Controller::class, "welcome"]);
+
+Route::get('/auctions/{auction}', [Controller::class, "show"])->name("actions");

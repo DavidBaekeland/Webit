@@ -18,4 +18,10 @@ class Controller extends BaseController
 
         return view('welcome')->with(["auctions" => $auctions]);
     }
+
+    public function show(Auction $auction)
+    {
+        $products = $auction->products;
+        return view('auction', compact('products'));
+    }
 }
