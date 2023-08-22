@@ -1,0 +1,25 @@
+@import "card.css";
+
+:root {
+    --boxShadowCard: 0px 3px 6px #76767629;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    margin: 50px;
+}
+
+nav {
+    height: 100px;
+}
+
+nav img {
+    height: 80px;
+}
+
+.auctionsCards {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 60px;
+}
+
