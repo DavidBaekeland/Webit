@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -15,7 +16,9 @@ class Product extends Model
         'name',
         'slug',
         'end_date',
-        'accepted'
+        'accepted',
+        'start_valuation',
+        'end_valuation'
     ];
 
     public function getRouteKeyName()
@@ -23,8 +26,11 @@ class Product extends Model
         return 'slug';
     }
 
-    /* Relationships */
-    public function action(): BelongsTo
+    /** Attibutes */
+    public function getValuationAttribute()
+    {
+        return "$this->start_valuation - $this->end_valuation";
+    }
     {
         return $this->belongsTo(Auction::class);
     }
