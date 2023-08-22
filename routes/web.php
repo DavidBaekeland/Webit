@@ -19,3 +19,4 @@ Route::get('/', [Controller::class, "welcome"]);
 
 Route::get('/auctions/{auction}', [Controller::class, "show"])->name("actions");
 Route::get('/auctions/{auction}/{product}', [Controller::class, "product"])->name("product");
+Route::post('/auctions/{auction}/{product}', [Controller::class, "offer"])->name("product.offer");

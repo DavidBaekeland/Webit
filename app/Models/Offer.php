@@ -14,6 +14,7 @@ class Offer extends Model
     protected $fillable = [
         'email',
         'offer',
+        'product_id',
         'accepted',
     ];
 
