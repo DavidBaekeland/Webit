@@ -31,7 +31,8 @@ class Auction extends Model
         $startDate = Carbon::createFromFormat('Y-m-d H:i:s', $this->start_date)->format('d-m-Y');
         $startTime = Carbon::createFromFormat('Y-m-d H:i:s', $this->start_date)->format('H:i');
 
-        return $startDate." om ". $startTime;
+        return "$startDate om $startTime";
+
     }
 
     public function getEndAttribute()
@@ -39,7 +40,7 @@ class Auction extends Model
         $endDate = Carbon::createFromFormat('Y-m-d H:i:s', $this->end_date)->format('d-m-Y');
         $endTime = Carbon::createFromFormat('Y-m-d H:i:s', $this->end_date)->format('H:i');
 
-        return $endDate." om ". $endTime;
+        return "$endDate om $endTime";
     }
 
     /** Relationships */
