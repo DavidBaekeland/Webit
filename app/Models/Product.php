@@ -33,4 +33,9 @@ class Product extends Model
     {
         return $this->hasMany(Offer::class);
     }
+
+    public function images(): HasMany
+    {
+        return $this->hasMany(Image::class);
+    }
 }
