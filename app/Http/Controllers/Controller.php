@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Http\Requests\StoreOfferRequest;
 use App\Mail\ConfirmationOffer;
+use App\Mail\Contact;
 use App\Models\Auction;
 use App\Models\Offer;
 use App\Models\Product;
@@ -21,8 +23,9 @@ class Controller extends BaseController
     {
         $auctions = Auction::all();
         $auctions->load('products');
+        $uniqueProducts = Product::where("unique", 1)->get();
 
-        return view('welcome')->with(["auctions" => $auctions]);
+        return view('welcome', compact('auctions', 'uniqueProducts'));
     }
 
     public function show(Auction $auction)
@@ -48,5 +51,15 @@ class Controller extends BaseController
         Mail::to($request->email)->queue(new ConfirmationOffer($offer, $product));
 
         return redirect()->back()->with('succes', 'Uw bod is goed ontvangen.');
+    }
+
+
+    public function contact(ContactRequest $request)
+    {
+        Mail::to($request->email)
+            ->cc(env('MAIL_FROM_ADDRESS'))
+            ->queue(new Contact($request->name, $request->message));
+
+        return redirect()->back()->with('succes', 'Uw bericht is goed ontvangen.');
     }
 }

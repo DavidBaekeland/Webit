@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [Controller::class, "welcome"]);
+Route::post('/contact', [Controller::class, "contact"])->name('contact');
 
 Route::get('/auctions/{auction}', [Controller::class, "show"])->name("actions");
 Route::get('/auctions/{auction}/{product}', [Controller::class, "product"])->name("product");

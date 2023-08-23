@@ -5,8 +5,16 @@
     font-family: "Segoe UI", Roboto, sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     margin: 50px;
+}
+
+.center {
+    text-align: center;
 }
 
 nav {
@@ -30,7 +38,8 @@ nav img {
     flex-flow: row wrap;
 }
 
-input {
+
+input, textarea {
     background: #AFAFAF12 0% 0% no-repeat padding-box;
     box-shadow: var(--boxShadowCard);
     border-radius: 5px;
@@ -39,3 +48,74 @@ input {
     padding-left: 20px;
     border: none;
 }
+
+textarea {
+    height: auto;
+}
+
+#aboutSection div.card {
+    margin: auto;
+    padding: 10px 20px;
+    width: 50%;
+    height: auto;
+}
+
+#uniqueProductsSection div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.uniqueProductsLinks {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: var(--boxShadowCard);
+}
+
+section {
+    margin: 40px;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 130px;
+    margin: 40px;
+    margin-top: 80px;
+}
+
+footer div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+footer img {
+    height: 40%;
+}
+
+form button {
+    width: 100%;
+    background-color: #00C0FF;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    padding: 10px;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding: 30px;
+    width: 60%;
+    height: 600px;
+}
+
+#contactForm input, #contactForm textarea {
+    width: 100%;
+}
+

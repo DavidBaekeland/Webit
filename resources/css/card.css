@@ -12,12 +12,16 @@
     margin: 20px;
 }
 
-.card img {
+.card img, .uniqueProductsLinks img {
     width: 100%;
     height: 155px;
     object-fit: cover;
     overflow: hidden;
     border-radius: 5px;
+}
+
+.uniqueProductsLinks img {
+    height: 100%;
 }
 
 
