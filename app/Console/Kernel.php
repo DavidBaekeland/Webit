@@ -12,7 +12,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->exec('php artisan queue:work --max-time=60')->everyMinute();
+        $schedule->command('app:accept-offer')->everyMinute();
     }
 
     /**

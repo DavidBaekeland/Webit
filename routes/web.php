@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Models\Auction;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Controller::class, "welcome"]);
+Route::post('/contact', [Controller::class, "contact"])->name('contact');
+
+Route::get('/auctions/{auction}', [Controller::class, "show"])->name("actions");
+Route::get('/auctions/{auction}/{product}', [Controller::class, "product"])->name("product");
+Route::post('/auctions/{auction}/{product}', [Controller::class, "offer"])->name("product.offer");
