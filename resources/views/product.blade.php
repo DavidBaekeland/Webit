@@ -70,9 +70,19 @@
                     <form id="offerForm" action="{{ route("product.offer", ["auction" => $auction, "product" => $product]) }}" method="post">
                         @csrf
 
+                        @if ($errors->any())
+                            <div>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+
                         <div id="offerInput">
-                            <input id="offer" type="number" name="offer" placeholder="offer">
-                            <input id="email" type="email" name="email" placeholder="email">
+                            <input id="offer" type="number" name="offer" placeholder="offer" value="{{ old('offer') }}">
+                            <input id="email" type="email" name="email" placeholder="email" value="{{ old('email') }}">
                         </div>
 
                         <button type="submit">BIEDEN</button>

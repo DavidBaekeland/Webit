@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreOfferRequest;
 use App\Mail\ConfirmationOffer;
 use App\Models\Auction;
 use App\Models\Offer;
@@ -37,6 +38,7 @@ class Controller extends BaseController
     }
 
     public function offer(Request $request, Auction $auction, Product $product)
+    public function offer(StoreOfferRequest $request, Auction $auction, Product $product)
     {
         $offer = Offer::create([
             'email' => $request->email,
