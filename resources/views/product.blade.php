@@ -55,9 +55,9 @@
                 <div id="higestOfferDiv">
                     @if($product->higestOffer)
                         <h3>Hoogste bod</h3>
-                        <h2 id="higestOffer">{{$product->higestOffer->offer}}</h2>
+                        <h2 class="higgestOfferTitle">€{{$product->higestOffer->offer}}</h2>
                     @else
-                        <h2 id="higestOffer">0 biedingen</h2>
+                        <h2 class="higgestOfferTitle">0 biedingen</h2>
 
                     @endif
                 </div>
@@ -67,26 +67,32 @@
                        <p>{{\Illuminate\Support\Facades\Session::get('succes')}}</p>
                     @endif
 
-                    <form id="offerForm" action="{{ route("product.offer", ["auction" => $auction, "product" => $product]) }}" method="post">
-                        @csrf
+                    @if(\Carbon\Carbon::parse($product->end_date) > now())
 
-                        @if ($errors->any())
-                            <div>
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
+                        <form id="offerForm" action="{{ route("product.offer", ["auction" => $auction, "product" => $product]) }}" method="post">
+                            @csrf
+
+                            @if ($errors->any())
+                                <div>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                            <div id="offerInput">
+                                <input id="offer" type="number" name="offer" placeholder="offer" value="{{ old('offer') }}">
+                                <input id="email" type="email" name="email" placeholder="email" value="{{ old('email') }}">
                             </div>
-                        @endif
 
-                        <div id="offerInput">
-                            <input id="offer" type="number" name="offer" placeholder="offer" value="{{ old('offer') }}">
-                            <input id="email" type="email" name="email" placeholder="email" value="{{ old('email') }}">
-                        </div>
+                            <button type="submit">BIEDEN</button>
+                        </form>
+                    @else
+                        <h2 class="higgestOfferTitle">Het is niet meer mogelijk om te bieden.</h2>
+                   @endif
 
-                        <button type="submit">BIEDEN</button>
-                    </form>
             </div>
         </div>
 

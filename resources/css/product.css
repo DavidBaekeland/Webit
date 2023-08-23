@@ -21,7 +21,7 @@
     margin-bottom: 0;
 }
 
-#higestOffer {
+.higgestOfferTitle {
     font-weight: bold;
 }
 
@@ -42,6 +42,9 @@
 }
 
 #offerCard {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     text-align: center;
     width: 30%;
 }
