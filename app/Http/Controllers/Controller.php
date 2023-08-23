@@ -44,7 +44,7 @@ class Controller extends BaseController
             'product_id' => $product->id
         ]);
 
-        Mail::to($request->email)->send(new ConfirmationOffer($offer, $product));
+        Mail::to($request->email)->queue(new ConfirmationOffer($offer, $product));
 
         return redirect()->back()->with('succes', 'Uw bod is goed ontvangen.');
     }
