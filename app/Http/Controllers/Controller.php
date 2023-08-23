@@ -37,7 +37,6 @@ class Controller extends BaseController
         return view('product', compact('product', 'auction'));
     }
 
-    public function offer(Request $request, Auction $auction, Product $product)
     public function offer(StoreOfferRequest $request, Auction $auction, Product $product)
     {
         $offer = Offer::create([
