@@ -55,7 +55,7 @@
                 <div id="higestOfferDiv">
                     @if($product->higestOffer)
                         <h3>Hoogste bod</h3>
-                        <h2 id="higestOffer">{{$product->higestOffer}}</h2>
+                        <h2 id="higestOffer">{{$product->higestOffer->offer}}</h2>
                     @else
                         <h2 id="higestOffer">0 biedingen</h2>
 

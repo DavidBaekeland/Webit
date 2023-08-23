@@ -45,7 +45,7 @@ class Product extends Model
         $higestOffer = $this->offers()->orderByDesc("offer")->first();
         if ($higestOffer)
         {
-            return $higestOffer->offer;
+            return $higestOffer;
         } else
         {
             return false;
