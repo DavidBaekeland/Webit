@@ -16,10 +16,6 @@
     </nav>
 
     <div class="productsCards">
-        @if(\Illuminate\Support\Facades\Session::has('succes'))
-            <p>{{\Illuminate\Support\Facades\Session::get('succes')}}</p>
-        @endif
-
         <form action="{{ route('product.store', $auction) }}" method="post" class="card" id="loginForm" enctype="multipart/form-data">
             @csrf
 

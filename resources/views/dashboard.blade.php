@@ -21,6 +21,10 @@
             </svg>
         </a>
 
+        @if(\Illuminate\Support\Facades\Session::has('succes'))
+            <p>{{\Illuminate\Support\Facades\Session::get('succes')}}</p>
+        @endif
+
         <section class="auctionsCards" id="auctions">
             @foreach($auctions as $auction)
                 <x-card :auction="$auction" :url="route('auction.show', $auction->slug)"></x-card>

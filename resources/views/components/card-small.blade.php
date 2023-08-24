@@ -1,4 +1,4 @@
-<a class="card card-small" href="{{ route('product', [$product->auction->slug, $product]) }}">
+<a class="card card-small card-link" href="{{ route('product', [$product->auction->slug, $product]) }}">
     <img src="{{ asset('storage/auctions/'.$product->auction->slug.'/'.$product->slug.'/'.$product->imageFirst()) }}" alt="Boot" srcset="">
 
     <div class="infoCard">

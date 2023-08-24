@@ -25,7 +25,7 @@ class AuctionController extends Controller
 
         $request->file("image")->storeAs('public/auctions/'.$auction->slug, $request->file('image')->getClientOriginalName());
 
-        return redirect()->route("dashboard");
+        return redirect()->route("dashboard")->with("succes", "Uw veiling is goed aangemaakt");
     }
 
     public function showLogin(Auction $auction)
