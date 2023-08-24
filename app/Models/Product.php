@@ -18,7 +18,8 @@ class Product extends Model
         'end_date',
         'accepted',
         'start_valuation',
-        'end_valuation'
+        'end_valuation',
+        'auction_id'
     ];
 
     public function getRouteKeyName()

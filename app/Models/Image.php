@@ -11,7 +11,8 @@ class Image extends Model
     use HasFactory;
 
     protected $fillable = [
-        'image'
+        'image',
+        'product_id'
     ];
 
     /* Relationships */

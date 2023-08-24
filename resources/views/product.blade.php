@@ -11,9 +11,7 @@
         @vite(['resources/css/app.css', 'resources/css/product.css', 'resources/js/app.js'])
     </head>
     <body class="">
-        <nav>
-            <img src="https://www.webit.be/wp-content/themes/webit/images/beeldmerk.png" alt="logo" srcset="">
-        </nav>
+        <x-nav/>
 
         <div id="product">
             <div class="productInfo">

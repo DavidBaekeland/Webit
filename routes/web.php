@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuctionController;
+use App\Http\Controllers\AuthProductController;
 use App\Http\Controllers\Controller;
 use App\Models\Auction;
 use Illuminate\Support\Facades\Route;
@@ -23,8 +24,16 @@ Route::get('/auctions/{auction}', [Controller::class, "show"])->name("actions");
 Route::get('/auctions/{auction}/{product}', [Controller::class, "product"])->name("product");
 Route::post('/auctions/{auction}/{product}', [Controller::class, "offer"])->name("product.offer");
 
+Route::get('/products/{auction}', [AuthProductController::class, "create"])
+    ->middleware('auth')
+    ->name("product.create");
+
+Route::post('/products/{auction}', [AuthProductController::class, "store"])
+    ->middleware('auth')
+    ->name("product.store");
+
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
     $auctions = Auction::all();
     return view('dashboard', compact('auctions'));
 })->middleware("auth")->name('dashboard');
