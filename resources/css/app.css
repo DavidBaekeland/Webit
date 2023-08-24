@@ -19,6 +19,9 @@ body {
 
 nav {
     height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 nav img {
@@ -119,3 +122,37 @@ form button {
     width: 100%;
 }
 
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 30px;
+    margin: auto;
+}
+
+#loginForm div{
+    display: flex;
+    flex-direction: column;
+}
+
+#loginForm div input{
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.productDelete {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.productDelete svg {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+}
+
+.card-link {
+    display: block;
+}

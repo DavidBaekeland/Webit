@@ -11,13 +11,11 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <nav>
-            <img src="https://www.webit.be/wp-content/themes/webit/images/beeldmerk.png" alt="logo" srcset="">
-        </nav>
+        <x-nav/>
 
         <section class="auctionsCards" id="auctions">
             @foreach($auctions as $auction)
-                <x-card :auction="$auction"></x-card>
+                <x-card :auction="$auction" :url="route('actions', $auction->slug)"></x-card>
             @endforeach
         </section>
 
