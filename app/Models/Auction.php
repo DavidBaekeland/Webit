@@ -16,7 +16,7 @@ class Auction extends Model
         'slug',
         'start_date',
         'end_date',
-        'img'
+        'image'
     ];
 
 
