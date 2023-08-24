@@ -24,6 +24,8 @@ Route::post('/auctions/{auction}/{product}', [Controller::class, "offer"])->name
 
 Route::get('/dashboard', function () {
     return view('dashboard');
+    $auctions = Auction::all();
+    return view('dashboard', compact('auctions'));
 })->middleware("auth")->name('dashboard');
 
 

@@ -10,13 +10,13 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="">
+    <body>
         <nav>
             <img src="https://www.webit.be/wp-content/themes/webit/images/beeldmerk.png" alt="logo" srcset="">
         </nav>
 
         <div class="productsCards">
-            <form action="{{ route('login') }}" method="post" class="card" id="loginForm">
+            <form action="{{ route('login.store') }}" method="post" class="card" id="loginForm">
                 @csrf
 
                 @if ($errors->any())
