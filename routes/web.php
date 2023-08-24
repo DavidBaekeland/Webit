@@ -32,6 +32,10 @@ Route::post('/products/{auction}', [AuthProductController::class, "store"])
     ->middleware('auth')
     ->name("product.store");
 
+Route::delete('/product', [AuthProductController::class, "delete"])
+    ->middleware('auth')
+    ->name("product.delete");
+
 
 Route::get('/dashboard', function () {
     $auctions = Auction::all();
@@ -42,7 +46,7 @@ Route::get('/auction/{auction}', [AuctionController::class, "showLogin"])
     ->middleware('auth')
     ->name("auction.show");
 
-Route::get('/auction/create', [AuctionController::class, "create"])
+Route::get('/auctionCreate', [AuctionController::class, "create"])
     ->middleware('auth')
     ->name("auction.create");
 
